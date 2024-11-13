@@ -1,0 +1,38 @@
+<div class="sign-up-container">
+  <mat-card class="sign-up-card">
+    <mat-card-header>
+      <mat-card-title>Únete a Learn.E</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="sign-up-form">
+        <mat-form-field appearance="fill" class="input-field">
+          <input [(ngModel)]="user.firstName" matInput name="firstName" placeholder="Nombre" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <input [(ngModel)]="user.lastName" matInput name="lastName" placeholder="Apellido" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <input [(ngModel)]="user.username" matInput name="username" placeholder="Usuario" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <input [(ngModel)]="user.email" matInput name="email" placeholder="Correo electrónico" required>
+        </mat-form-field>
+        <mat-form-field appearance="fill" class="input-field">
+          <input [(ngModel)]="user.password" matInput type="password" name="password" placeholder="Contraseña" required>
+        </mat-form-field>
+        <label id="user-radio-group-label">Selecciona tu rol</label>
+        <mat-radio-group
+          aria-labelledby="user-radio-group-label"
+          class="user-radio-group"
+          [(ngModel)]="user.type_user" name="userType">
+          <mat-radio-button class="user-radio-button" [value]="UserType.TEACHER">Empresa</mat-radio-button>
+          <mat-radio-button class="user-radio-button" [value]="UserType.STUDENT">Persona</mat-radio-button>
+        </mat-radio-group>
+        <div class="buttons">
+          <button mat-raised-button color="primary" (click)="createNewUser()">Crear Cuenta</button>
+        </div>
+      </form>
+      <p class="login-link">¿Ya tienes cuenta? <a routerLink="/mainToolbar/signIn">Inicia sesión aquí</a></p>
+    </mat-card-content>
+  </mat-card>
+</div>

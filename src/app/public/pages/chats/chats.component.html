@@ -1,0 +1,21 @@
+<div class="chat-container">
+  <div class="chat-header">
+    <h3>Chat</h3>
+  </div>
+
+  <div class="chat-messages">
+    <div *ngFor="let message of messages" class="message">
+      <div class="message-header">
+        <strong>{{ message.user }}</strong> <span class="message-time">{{ message.time }}</span>
+      </div>
+      <div class="message-content">{{ message.message }}</div>
+    </div>
+  </div>
+
+  <div class="chat-input">
+    <mat-form-field appearance="fill">
+      <textarea matInput [(ngModel)]="newMessage" placeholder="Type a message..."></textarea>
+    </mat-form-field>
+    <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+  </div>
+</div>

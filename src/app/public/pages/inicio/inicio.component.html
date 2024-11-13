@@ -1,0 +1,55 @@
+<div class="home-layout">
+  <!-- Contenedor centrado para búsqueda -->
+  <div class="centered-container search-bar">
+    <mat-form-field appearance="outline">
+      <mat-label>Buscar en Twitter</mat-label>
+      <button mat-icon-button matPrefix>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput placeholder="Buscar...">
+    </mat-form-field>
+  </div>
+
+  <!-- Contenedor centrado para "What's happening" -->
+  <div class="centered-container whats-happening">
+    <div class="post-header">
+      <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/925/412/9d1.jpeg" alt="User Avatar" class="user-avatar">
+      <h3>What's happening?</h3>
+    </div>
+
+    <mat-form-field appearance="fill">
+      <textarea matInput placeholder="What's on your mind?"></textarea>
+    </mat-form-field>
+
+    <div class="post-options">
+      <button mat-icon-button>
+        <mat-icon>photo_camera</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>video_camera</mat-icon>
+      </button>
+      <button mat-icon-button>
+        <mat-icon>location_on</mat-icon>
+      </button>
+      <button mat-raised-button color="primary">Post</button>
+    </div>
+  </div>
+
+
+  <!-- Feed de posts -->
+  <div class="feed">
+    <mat-card *ngFor="let post of posts" class="tweet-card">
+      <mat-card-header>
+        <mat-card-title>{{ post.username }}</mat-card-title>
+        <mat-card-subtitle>{{ post.date }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post.content }}</p>
+        <ng-container *ngIf="post.media">
+          <img *ngIf="post.mediaType === 'image'" [src]="post.media" alt="Post image" class="post-media">
+          <video *ngIf="post.mediaType === 'video'" [src]="post.media" controls class="post-media"></video>
+        </ng-container>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

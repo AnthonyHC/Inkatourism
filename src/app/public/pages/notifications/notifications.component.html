@@ -1,0 +1,12 @@
+<div class="notifications-container">
+  <mat-card class="notification-card" *ngFor="let notification of notifications">
+    <mat-card-content>
+      <div class="notification-item">
+        <mat-icon mat-list-icon class="notification-icon">{{ notification.icon }}</mat-icon>
+        <div class="notification-message">
+          {{ notification.message }}
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</div>
