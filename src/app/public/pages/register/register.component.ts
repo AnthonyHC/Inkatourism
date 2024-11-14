@@ -62,10 +62,10 @@ export class RegisterComponent {
   private typeUserIdentification() {
     const userType = Number(sessionStorage.getItem('type_user'));
     if (userType === UserType.PERSON) {
-      this.router.navigate(['/subscriptions']);
+      this.router.navigate(['/mainPage/home']);
     } else if (userType === UserType.COMPANY) {
       sessionStorage.setItem('type_plan', String(this.user.type_user));
-      this.router.navigate(['/mainPage/management']);
+      this.router.navigate(['/mainPage/home']);
     }
   }
 }

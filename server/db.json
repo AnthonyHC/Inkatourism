@@ -13,6 +13,13 @@
       "email": "empresa@gmail.com",
       "password": "1234",
       "type_user": 2
+    },
+    {
+      "id": 3,
+      "fullname": "fabrisdio",
+      "email": "dasdasd",
+      "password": "adsadsa",
+      "type_user": 1
     }
   ]
 }

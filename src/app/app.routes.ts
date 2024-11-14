@@ -15,18 +15,17 @@ export const routes: Routes = [
       {path: 'home', component: LandingPageComponent},
       { path: 'signIn',         component: SignInComponent},
       { path: 'register',       component: RegisterComponent},
+
+    ]},
+  { path: 'mainPage',            component: MainPageComponent, children: [
+
       {path: 'notification', component: NotificationsComponent},
       {path: 'profile', component: ProfileComponent},
       {path: 'inicio', component: HomeComponent},
       {path: 'chat', component: ChatComponent},
 
     ]},
-  { path: 'mainPage',            component: MainPageComponent, children: [
-
-
-    ]},
-
-  { path: '',                    redirectTo: 'mainToolbar/home', pathMatch: 'full' },
+  { path: '',                    redirectTo: 'mainPage/home', pathMatch: 'full' },
   { path: '**',                  component: PageNotFoundComponent }
 
 
