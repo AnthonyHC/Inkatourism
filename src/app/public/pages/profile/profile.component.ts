@@ -80,7 +80,6 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  // Método para sanitizar el URL de YouTube
   getSafeVideoUrl(url: string): SafeResourceUrl {
     const videoId = url.split('v=')[1].split('&')[0];  // Extrae el ID del video
     return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${videoId}`);
