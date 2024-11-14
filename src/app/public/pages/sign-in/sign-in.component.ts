@@ -8,7 +8,6 @@ import {MatLabel} from "@angular/material/form-field";
 import {Router, RouterLink, RouterModule} from "@angular/router";
 import {User} from '../../../inkatouris/model/users.entity';
 import {UserService} from '../../../inkatouris/service/users.service';
-import {UserType} from '../../../inkatouris/model/users';
 @Component({
   selector: 'app-sign-in',
   standalone: true,
