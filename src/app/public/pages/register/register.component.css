@@ -4,27 +4,21 @@
   box-sizing: border-box;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-image: url('https://via.placeholder.com/1920x1080'); /* Puedes poner tu fondo aquí */
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
-  color: #14171a;
-  height: 100vh; /* Asegura que el body ocupe toda la altura de la pantalla */
-  display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
-  align-items: center; /* Centra el contenido verticalmente */
-}
+
 
 .sign-up-container {
   width: 100%;
   max-width: 400px;
   padding: 20px;
   text-align: center;
-  background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco semitransparente para que contraste con el fondo */
+  background-color: rgba(255, 255, 255, 0.9);
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  display: flex;
+  align-items: center;
+  margin:0 auto;
+
+
 }
 
 mat-card {
@@ -40,6 +34,7 @@ mat-card {
 .sign-up-form {
   display: flex;
   flex-direction: column;
+
   gap: 15px;
 }
 
@@ -51,6 +46,7 @@ mat-card {
   margin-top: 20px;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 button.mat-raised-button {
@@ -71,6 +67,7 @@ button.mat-raised-button:hover {
 .login-link {
   margin-top: 20px;
   font-size: 0.9rem;
+  color: #000000; /* Color del texto negro */
 }
 
 .login-link a {

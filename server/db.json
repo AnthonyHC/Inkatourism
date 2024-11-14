@@ -1,0 +1,18 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "fullname": "pepe soto",
+      "email": "pepe@gmail.com",
+      "password": "1234",
+      "type_user": 1
+    },
+    {
+      "id": 2,
+      "fullname": "empresa",
+      "email": "empresa@gmail.com",
+      "password": "1234",
+      "type_user": 2
+    }
+  ]
+}
