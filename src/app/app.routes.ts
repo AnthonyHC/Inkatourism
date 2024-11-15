@@ -6,15 +6,15 @@ import {PageNotFoundComponent} from './public/pages/page-not-found/page-not-foun
 import {ProfileComponent} from './public/pages/profile/profile.component';
 import {NotificationsComponent} from './public/pages/notifications/notifications.component';
 import {LandingPageComponent} from './public/pages/landing-page/landing-page.component';
-import {SignInComponent} from './public/pages/sign-in/sign-in.component';
-import {RegisterComponent} from './public/pages/register/register.component';
+// import {SignInComponent} from './public/pages/sign-in/sign-in.component';
+// import {RegisterComponent} from './public/pages/register/register.component';
 import {ChatComponent} from './public/pages/chats/chats.component';
 
 export const routes: Routes = [
   { path: 'mainToolbar', component: MainToolbarComponent, children: [
       {path: 'home', component: LandingPageComponent},
-      { path: 'signIn',         component: SignInComponent},
-      { path: 'register',       component: RegisterComponent},
+      // { path: 'signIn',         component: SignInComponent},
+      // { path: 'register',       component: RegisterComponent},
 
     ]},
   { path: 'mainPage',            component: MainPageComponent, children: [
