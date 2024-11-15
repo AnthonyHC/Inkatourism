@@ -1,25 +1,96 @@
 {
   "users": [
     {
-      "id": 1,
-      "fullname": "pepe soto",
-      "email": "pepe@gmail.com",
-      "password": "1234",
-      "type_user": 1
+      "id": "6715e4ae4207fc3afdb56c0b",
+      "fullName": "John Connor",
+      "email": "john.co@example.com",
+      "password": "password1"
     },
     {
-      "id": 2,
-      "fullname": "empresa",
-      "email": "empresa@gmail.com",
-      "password": "1234",
-      "type_user": 2
+      "id": "6715e4ae4207fc3afdb56c0c",
+      "fullName": "Jane Smith",
+      "email": "jane.smith@example.com",
+      "password": "password2"
     },
     {
-      "id": 3,
-      "fullname": "fabrisdio",
-      "email": "dasdasd",
-      "password": "adsadsa",
-      "type_user": 1
+      "id": "6715e4ae4207fc3afdb56c0d",
+      "fullName": "Michael Johnson",
+      "email": "michael.johnson@example.com",
+      "password": "password3"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c0e",
+      "fullName": "Emily Davis",
+      "email": "emily.davis@example.com",
+      "password": "password4"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c0f",
+      "fullName": "David Williams",
+      "email": "david.williams@example.com",
+      "password": "password5"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c10",
+      "fullName": "Laura Brown",
+      "email": "laura.brown@example.com",
+      "password": "password6"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c11",
+      "fullName": "James Jones",
+      "email": "james.jones@example.com",
+      "password": "password7"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c13",
+      "fullName": "Robert Miller",
+      "email": "robert.miller@example.com",
+      "password": "password9"
+    },
+    {
+      "id": "6715e4ae4207fc3afdb56c14",
+      "fullName": "Sophia Martinez",
+      "email": "sophia.martinez@example.com",
+      "password": "password10"
+    },
+    {
+      "id": "672db3fe4884e50caa62e8f7",
+      "fullName": "Olivia Garcia",
+      "email": "olivia.garcia@example.com",
+      "password": "password8"
+    }
+  ],
+  "companies": [
+    {
+      "id": "672eb2736c7432122d949ca4",
+      "name": "Travel World Tours",
+      "email": "contact@travelworldtours.com",
+      "password": "travelWorld123"
+    },
+    {
+      "id": "672eb2736c7432122d949ca5",
+      "name": "Adventure Seekers",
+      "email": "info@adventureseekers.com",
+      "password": "adventurePass456"
+    },
+    {
+      "id": "672eb2736c7432122d949ca6",
+      "name": "Luxury Escapes",
+      "email": "support@luxuryescapes.net",
+      "password": "luxuryEscape789"
+    },
+    {
+      "id": "672eb2736c7432122d949ca7",
+      "name": "Eco Travel Co",
+      "email": "hello@ecotravelco.org",
+      "password": "ecoFriendly1234"
+    },
+    {
+      "id": "672eb2736c7432122d949ca8",
+      "name": "Wanderlust Expeditions",
+      "email": "team@wanderlustexpeditions.com",
+      "password": "wanderlust567"
     }
   ],
   "notifications": [
@@ -212,53 +283,46 @@
   ],
   "posts": [
     {
-      "id": "6715ed924207fc3afdb56c49",
-      "description": "Explorando las ruinas de Machu Picchu durante el amanecer",
-      "url_video": "https://www.example.com/videos/machu_picchu_sunrise.mp4",
-      "url_imagen": "https://www.example.com/images/machu_picchu_sunrise.jpg",
-      "place": "Machu Picchu, Perú",
-      "recipientId": "6715e4ae4207fc3afdb56c0c",
+      "id": "6715ed924207fc3afdb56c4e",
+      "description": "Navegando por los fiordos de Noruega",
+      "url_video": "https://www.youtube.com/watch?v=3loRIt690NE",
+      "url_imagen": "https://static.wixstatic.com/media/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg/v1/fill/w_1000,h_618,al_c,q_85,enc_auto/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg",
+      "place": "Fiordos de Noruega",
+      "recipientId": "6715e4ae4207fc3afdb56c0b",
       "type": "user",
       "comments": [
         {
-          "description": "¡Qué vista increíble!",
-          "recipient_id": "6715e4ae4207fc3afdb56c0d",
+          "description": "¡Los paisajes deben ser impresionantes!",
+          "recipient_id": "6715e4ae4207fc3afdb56c21",
           "type": "user"
         }
       ]
     },
     {
-      "id": "6715ed924207fc3afdb56c4a",
-      "description": "Caminata por el Gran Cañón al atardecer",
-      "url_video": "https://www.example.com/videos/grand_canyon_hike.mp4",
-      "url_imagen": "https://www.example.com/images/grand_canyon_sunset.jpg",
-      "place": "Gran Cañón, EE. UU.",
-      "recipientId": "6715e4ae4207fc3afdb56c0f",
-      "type": "user",
+      "id": "6715ed924207fc3afdb56c4f",
+      "description": "Escalando la Torre Eiffel al atardecer",
+      "url_video": "https://www.youtube.com/watch?v=YPMOce2VdKQ",
+      "url_imagen": "https://img.freepik.com/premium-photo/eiffel-tower-night-paris-france_605022-4342.jpg",
+      "place": "París, Francia",
+      "recipientId": "672eb2736c7432122d949ca4",
+      "type": "company",
       "comments": [
         {
-          "description": "Siempre quise ir ahí, ¡qué impresionante!",
-          "recipient_id": "6715e4ae4207fc3afdb56c10",
+          "description": "¡París es mágico a esa hora!",
+          "recipient_id": "6715e4ae4207fc3afdb56c24",
           "type": "user"
         }
       ]
     },
     {
-      "id": "6715ed924207fc3afdb56c4b",
-      "description": "Disfrutando de un paseo en góndola en los canales de Venecia",
-      "url_video": "https://www.example.com/videos/venice_gondola.mp4",
-      "url_imagen": "https://www.example.com/images/venice_gondola.jpg",
-      "place": "Venecia, Italia",
-      "recipientId": "6715e4ae4207fc3afdb56c12",
+      "id": "pkRjtip",
+      "description": "Holaaa",
+      "url_video": "https://www.youtube.com/watch?v=yFMKlkyqsLI",
+      "url_imagen": "https://www.viajesgram.com/uploads/34173cb38f07f89ddbebc2ac9128303f/images/islandia.jpg",
+      "place": "Islandia",
+      "recipientId": "6715e4ae4207fc3afdb56c13",
       "type": "user",
-      "comments": [
-        {
-          "description": "Siempre he soñado con un paseo en góndola.",
-          "recipient_id": "6715e4ae4207fc3afdb56c13",
-          "type": "user"
-        }
-      ]
+      "comments": []
     }
   ]
-
 }

@@ -1,3 +1,3 @@
 export const environment = {
-  serverBasePath: 'http://localhost:80'
+  serverBasePath: 'http://localhost:3000/api/v1'
 };

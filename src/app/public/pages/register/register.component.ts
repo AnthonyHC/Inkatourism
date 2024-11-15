@@ -1,89 +1,71 @@
-import { Component, EventEmitter, inject, Output } from '@angular/core';
-import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
-import { MatButtonModule } from '@angular/material/button';
-import { Router, RouterLink } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
-import { User } from '../../../inkatouris/model/users.entity';
-import { UserService } from '../../../inkatouris/service/users.service';
-import { UserType } from '../../../inkatouris/model/users.enum';
-import { CompaniesService } from '../../../inkatouris/service/companies.service';
-import { Company } from '../../../inkatouris/model/company.entity';
-import {NgIf} from '@angular/common';
-
-@Component({
-  selector: 'app-register',
-  standalone: true,
-  imports: [
-    MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
-    RouterLink,
-    FormsModule,
-    MatRadioGroup,
-    MatRadioButton,
-    NgIf,
-  ],
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
-})
-export class RegisterComponent {
-  user: User = new User({});
-  company: Company = new Company({});
-  @Output() protected userAddRequested = new EventEmitter<User | Company>();
-
-  private userService: UserService = inject(UserService);
-  private companyService: CompaniesService = inject(CompaniesService);
-  protected userType: UserType = UserType.user;
-
-  constructor(private router: Router) {}
-
-  protected async createNewUser() {
-    if (this.userType == UserType.user) {
-      if (this.user.email && this.user.password && this.user.fullName) {
-        this.userService.create(this.user).subscribe({
-          next: (newUser: User) => {
-            sessionStorage.setItem('id', newUser.id);
-            sessionStorage.setItem('email', this.user.email);
-            sessionStorage.setItem('fullName', this.user.fullName);
-            sessionStorage.setItem('type', 'user');
-            this.router.navigate(['/mainPage/inicio']);
-          },
-          error: (error) => {
-            console.log('Error creando usuario', error);
-          },
-        });
-      }
-    } else if (this.userType == UserType.company) {
-      if (this.company.email && this.company.password && this.company.name) {
-        this.companyService.create(this.company).subscribe({
-          next: (newCompany: Company) => {
-            sessionStorage.setItem('id', newCompany.id);
-            sessionStorage.setItem('email', this.company.email);
-            sessionStorage.setItem('fullName', this.company.name);
-            sessionStorage.setItem('type', 'company');
-            this.router.navigate(['/mainPage/inicio']);
-          },
-          error: (error) => {
-            console.log('Error creando usuario', error);
-          },
-        });
-      } else {
-        console.log('Completa los campos correspondientes para la empresa');
-      }
-    }
-  }
-
-  protected isFormValid(): boolean {
-    if (this.userType === UserType.user) {
-      return !!(this.user.fullName && this.user.email && this.user.password);
-    } else if (this.userType === UserType.company) {
-      return !!(this.company.name && this.company.email && this.company.password);
-    }
-    return false;
-  }
-  protected readonly UserType = UserType;
-}
+// import { Component, EventEmitter, inject, Input, Output } from '@angular/core';
+// import { MatCardModule } from '@angular/material/card';
+// import { MatFormFieldModule } from '@angular/material/form-field';
+// import { MatInputModule } from '@angular/material/input';
+// import { MatButtonModule } from '@angular/material/button';
+// import { Router, RouterLink } from '@angular/router';
+// import { FormsModule } from '@angular/forms';
+// import { MatRadioButton, MatRadioGroup } from '@angular/material/radio';
+// import {User} from '../../../inkatouris/model/users.entity';
+// import {UserService} from '../../../inkatouris/service/users.service';
+// import {UserType} from '../../../inkatouris/model/users';
+//
+// @Component({
+//   selector: 'app-register',
+//   standalone: true,
+//   imports: [
+//     MatCardModule,
+//     MatFormFieldModule,
+//     MatInputModule,
+//     MatButtonModule,
+//     RouterLink,
+//     FormsModule,
+//     MatRadioGroup,
+//     MatRadioButton,
+//   ],
+//   templateUrl: './register.component.html',
+//   styleUrl: './register.component.css'
+// })
+// export class RegisterComponent {
+//   @Input() user!: User;
+//   @Output() protected userAddRequested = new EventEmitter<User>();
+//   protected UserType = UserType;
+//
+//   private userService: UserService = inject(UserService);
+//
+//   constructor(private router: Router) {
+//     // Inicializar el objeto 'user' vacío
+//     this.user = new User({});
+//   }
+//
+//   protected async createNewUser() {
+//     // Asegurarse de que el formulario es válido antes de hacer la solicitud
+//     if (this.user.email && this.user.password && this.user.fullname) {
+//       this.userService.create(this.user).subscribe({
+//         next: (newUser: User) => {
+//           sessionStorage.setItem('id', String(newUser.id));
+//           sessionStorage.setItem('fullname', this.user.fullname);
+//           sessionStorage.setItem('email', this.user.email);
+//           sessionStorage.setItem('password', this.user.password);
+//           sessionStorage.setItem('type_user', String(this.user.type_user));
+//           this.typeUserIdentification();
+//         },
+//         error: (error) => {
+//           console.log('Error creando usuario', error);
+//         },
+//       });
+//     } else {
+//       console.error('Por favor, complete todos los campos.');
+//     }
+//   }
+//
+//   private typeUserIdentification() {
+//     const userType = Number(sessionStorage.getItem('type_user'));
+//     if (userType === UserType.PERSON) {
+//       this.router.navigate(['/mainPage/home']);
+//     } else if (userType === UserType.COMPANY) {
+//       sessionStorage.setItem('type_plan', String(this.user.type_user));
+//       this.router.navigate(['/mainPage/home']);
+//     }
+//   }
+// }

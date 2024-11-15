@@ -1,67 +1,110 @@
-<!--<div class="home-layout">-->
-<!--  &lt;!&ndash; Contenedor para barra de búsqueda &ndash;&gt;-->
-<!--  <div class="search-container">-->
-<!--    <mat-form-field appearance="outline" class="search-bar">-->
-<!--      <mat-label>Buscar en Twitter</mat-label>-->
-<!--      <button mat-icon-button matPrefix>-->
-<!--        <mat-icon>search</mat-icon>-->
-<!--      </button>-->
-<!--      <input matInput placeholder="Buscar...">-->
-<!--    </mat-form-field>-->
-<!--  </div>-->
+<div class="home-layout">
+  <!-- Contenedor para barra de búsqueda -->
+  <div class="search-container">
+    <mat-form-field appearance="outline" class="search-bar">
+      <mat-label>Buscar en Twitter</mat-label>
+      <button mat-icon-button matPrefix>
+        <mat-icon>search</mat-icon>
+      </button>
+      <input matInput placeholder="Buscar...">
+    </mat-form-field>
+  </div>
 
-<!--  &lt;!&ndash; Contenedor para crear publicaciones "What's happening?" &ndash;&gt;-->
-<!--  <div class="whats-happening-container">-->
-<!--    <mat-card class="whats-happening-card">-->
-<!--      <mat-card-header>-->
-<!--        <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/925/412/9d1.jpeg" alt="User Avatar" class="user-avatar">-->
-<!--        <mat-card-title>What's happening?</mat-card-title>-->
-<!--      </mat-card-header>-->
+  <!-- Contenedor para crear publicaciones "What's happening?" -->
+  <div class="whats-happening-container">
+    <mat-card class="whats-happening-card">
+      <mat-card-header>
+        <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/925/412/9d1.jpeg" alt="User Avatar" class="user-avatar">
+        <mat-card-title>What's happening?</mat-card-title>
+      </mat-card-header>
 
-<!--      <mat-card-content>-->
-<!--        <mat-form-field appearance="fill" class="post-input">-->
-<!--          <textarea matInput placeholder="What's on your mind?"></textarea>-->
-<!--        </mat-form-field>-->
-<!--        <div class="post-options">-->
-<!--          <button mat-icon-button>-->
-<!--            <mat-icon>photo_camera</mat-icon>-->
-<!--          </button>-->
-<!--          <button mat-icon-button>-->
-<!--            <mat-icon>video_camera</mat-icon>-->
-<!--          </button>-->
-<!--          <button mat-icon-button>-->
-<!--            <mat-icon>location_on</mat-icon>-->
-<!--          </button>-->
-<!--          <button mat-raised-button color="primary">Post</button>-->
-<!--        </div>-->
-<!--      </mat-card-content>-->
-<!--    </mat-card>-->
-<!--  </div>-->
+      <mat-card-content>
+        <mat-form-field appearance="fill" class="post-input">
+<!--          <textarea [ngModel]="newPost.description" matInput placeholder="What's on your mind?"></textarea>-->
+          <input matInput type="text" [(ngModel)]="newPost.description" name="description" required/>
+        </mat-form-field>
 
-<!--  &lt;!&ndash; Feed de publicaciones &ndash;&gt;-->
-<!--  <div class="feed-container">-->
-<!--    <mat-card *ngFor="let post of posts" class="tweet-card">-->
-<!--      <mat-card-header>-->
-<!--        <mat-card-title>{{ post.username }}</mat-card-title>-->
-<!--        <mat-card-subtitle>{{ post.date }}</mat-card-subtitle>-->
-<!--      </mat-card-header>-->
-<!--      <mat-card-content>-->
-<!--        <p>{{ post.content }}</p>-->
+        <div class="post-options">
+          <!-- Opción de imagen -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>photo_camera</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Image URL" [(ngModel)]="newPost.url_imagen" name="url_imagen" required/>
+            </mat-form-field>
+          </div>
 
-<!--        &lt;!&ndash; Mostrar el medio (imagen o video) si está presente &ndash;&gt;-->
-<!--        <div *ngIf="post.media">-->
-<!--          &lt;!&ndash; Si es un video de YouTube &ndash;&gt;-->
-<!--          <div *ngIf="post.media.includes('youtube.com')">-->
-<!--            <iframe width="100%" height="315" [src]="getSafeVideoUrl(post.media)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-<!--          </div>-->
+          <!-- Opción de video -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>videocam</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Video URL" [(ngModel)]="newPost.url_video" name="url_video" required/>
+            </mat-form-field>
+          </div>
 
-<!--          &lt;!&ndash; Si es una imagen &ndash;&gt;-->
-<!--          <div *ngIf="!post.media.includes('youtube.com')">-->
-<!--            <img width="100%" height="100%" [src]="post.media" alt="Post media" class="post-media-image" />-->
-<!--          </div>-->
-<!--        </div>-->
+          <!-- Opción de ubicación -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>location_on</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Location" [(ngModel)]="newPost.place" name="place" required/>
+            </mat-form-field>
+          </div>
+        </div>
 
-<!--      </mat-card-content>-->
-<!--    </mat-card>-->
-<!--  </div>-->
-<!--</div>-->
+        <!-- Botón de publicar al final -->
+        <div class="post-button-container">
+          <button mat-raised-button color="primary" (click)="createPost()">Post</button>
+        </div>
+
+
+
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <!-- Feed de publicaciones -->
+  <div class="feed-container">
+    <mat-card *ngFor="let post of posts" class="tweet-card">
+      <mat-card-header>
+<!--        <mat-card-title>{{ post.recipientId }}</mat-card-title>-->
+        <mat-card-title>{{ getUserFullName(post.recipientId) }}</mat-card-title>
+
+        <mat-card-subtitle>{{ post.place }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ post.description }}</p>
+        <!-- Mostrar video si existe una URL válida -->
+        <div *ngIf="post.url_video">
+          <iframe width="100%" height="315" [src]="getSafeVideoUrl(post.url_video)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Mostrar imagen si existe una URL de imagen -->
+        <div *ngIf="post.url_imagen">
+          <img width="100%" height="100%" [src]="post.url_imagen" alt="Post media" class="post-media-image" />
+        </div>
+
+
+
+        <div class="comments-section">
+          <h3>Comments</h3>
+
+          <div class="comments-list">
+            <div *ngFor="let comment of post.comments" class="comment-card">
+              <div class="comment-header">
+                <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/925/412/9d1.jpeg" alt="User Avatar" class="comment-avatar">
+                <span class="comment-username">{{ comment.description }}</span>
+            </div>
+          </div>
+        </div>
+
+
+</div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

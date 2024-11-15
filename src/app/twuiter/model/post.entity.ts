@@ -11,7 +11,7 @@ export class PostEntity {
   comments: Array<CommentEntity>;
 
   constructor(postEntity: {id?: string, description?: string, url_video?: string,
-    url_imagen?: string, place?: string, recipient_id?: string, type?: string,
+    url_imagen?: string, place?: string, recipientId?: string, type?: string,
     comments?: Array<CommentEntity>}) {
 
     this.id = postEntity.id || "";
@@ -19,7 +19,7 @@ export class PostEntity {
     this.url_video = postEntity.url_video || "";
     this.url_imagen = postEntity.url_imagen || "";
     this.place = postEntity.place || "";
-    this.recipientId = postEntity.recipient_id || "";
+    this.recipientId = postEntity.recipientId || "";
     this.type = postEntity.type || "";
     this.comments = postEntity.comments || [];
   }
