@@ -44,6 +44,10 @@ export class BaseService<T> {
   }
 
   public create(item: any): Observable<T> {
+    if (item._id === "" || item.id === "") {
+      delete item._id;
+      delete item.id;
+    }
     return  this.http.post<T>(this.resourcePath(), JSON.stringify(item), this.httpOptions)
       .pipe(retry(2), catchError(this.handleError));
   }

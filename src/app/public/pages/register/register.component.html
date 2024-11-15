@@ -30,7 +30,7 @@
         <ng-container *ngIf="userType === UserType.company">
           <mat-form-field appearance="fill">
             <mat-label>Nombre de la Empresa</mat-label>
-            <input matInput [(ngModel)]="company.name" name="companyName" required />
+            <input matInput [(ngModel)]="company.name" name="name" required />
           </mat-form-field>
           <mat-form-field appearance="fill">
             <mat-label>Email</mat-label>
@@ -42,7 +42,7 @@
           </mat-form-field>
         </ng-container>
         <div class="buttons">
-          <button mat-raised-button color="primary" type="submit">Crear Cuenta</button>
+          <button mat-raised-button color="primary" type="submit" [disabled]="!isFormValid()">Crear Cuenta</button>
         </div>
       </form>
       <p class="login-link">¿Ya tienes una cuenta? <a routerLink="/mainToolbar/signIn">Inicia sesión aquí</a></p>

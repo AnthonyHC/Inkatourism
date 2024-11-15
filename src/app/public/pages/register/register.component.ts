@@ -49,8 +49,8 @@ export class RegisterComponent {
             sessionStorage.setItem('id', newUser.id);
             sessionStorage.setItem('email', this.user.email);
             sessionStorage.setItem('fullName', this.user.fullName);
-            sessionStorage.setItem('type', String(this.userType));
-            this.router.navigate(['/mainPage/home']);
+            sessionStorage.setItem('type', 'user');
+            this.router.navigate(['/mainPage/inicio']);
           },
           error: (error) => {
             console.log('Error creando usuario', error);
@@ -64,8 +64,8 @@ export class RegisterComponent {
             sessionStorage.setItem('id', newCompany.id);
             sessionStorage.setItem('email', this.company.email);
             sessionStorage.setItem('fullName', this.company.name);
-            sessionStorage.setItem('type', String(this.userType));
-            this.router.navigate(['/mainPage/home']);
+            sessionStorage.setItem('type', 'company');
+            this.router.navigate(['/mainPage/inicio']);
           },
           error: (error) => {
             console.log('Error creando usuario', error);
@@ -77,5 +77,13 @@ export class RegisterComponent {
     }
   }
 
+  protected isFormValid(): boolean {
+    if (this.userType === UserType.user) {
+      return !!(this.user.fullName && this.user.email && this.user.password);
+    } else if (this.userType === UserType.company) {
+      return !!(this.company.name && this.company.email && this.company.password);
+    }
+    return false;
+  }
   protected readonly UserType = UserType;
 }
