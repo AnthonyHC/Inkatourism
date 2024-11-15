@@ -1,21 +1,32 @@
-<div class="chat-container">
-  <div class="chat-header">
-    <h3>Chat</h3>
-  </div>
-
-  <div class="chat-messages">
-    <div *ngFor="let message of messages" class="message">
-      <div class="message-header">
-        <strong>{{ message.user }}</strong> <span class="message-time">{{ message.time }}</span>
-      </div>
-      <div class="message-content">{{ message.message }}</div>
+<div class="chat-wrapper">
+  <div class="chat-container">
+    <div class="header">
+      <label>Chat</label>
     </div>
-  </div>
-
-  <div class="chat-input">
-    <mat-form-field appearance="fill">
-      <textarea matInput [(ngModel)]="newMessage" placeholder="Type a message..."></textarea>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="sendMessage()">Send</button>
+    <mat-card-content>
+      <div class="contacts">
+        <mat-list>
+          <mat-list-item *ngFor="let contact of contacts" (click)="selectContact(contact)">
+            {{ getContactName(contact) }}
+          </mat-list-item>
+        </mat-list>
+      </div>
+      <div class="chat-box" *ngIf="selectedContact">
+        <div class="messages">
+          <mat-list>
+            <mat-list-item *ngFor="let message of messages">
+              {{ message.description }}
+            </mat-list-item>
+          </mat-list>
+        </div>
+        <form (ngSubmit)="sendMessage()" class="message">
+          <mat-form-field class="message-input" appearance="fill">
+            <mat-label>Escribe tu mensaje...</mat-label>
+            <input matInput type="text" [(ngModel)]="newMessage" name="message" />
+          </mat-form-field>
+          <button mat-raised-button color="primary" type="submit">Enviar</button>
+        </form>
+      </div>
+    </mat-card-content>
   </div>
 </div>

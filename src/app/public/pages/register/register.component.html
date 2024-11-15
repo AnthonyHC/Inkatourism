@@ -4,29 +4,46 @@
       <mat-card-title>Registrarse en Learn.E</mat-card-title>
     </mat-card-header>
     <mat-card-content>
-      <form class="sign-up-form">
-
-
-        <mat-form-field appearance="fill">
-          <input [(ngModel)]="user.fullname" matInput name="username" placeholder="Fullname" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <input [(ngModel)]="user.email" matInput name="email" placeholder="Correo electrónico" required>
-        </mat-form-field>
-        <mat-form-field appearance="fill">
-          <input [(ngModel)]="user.password" matInput type="password" name="password" placeholder="Contraseña" required>
-        </mat-form-field>
+      <form class="sign-up-form" (ngSubmit)="createNewUser()">
         <label id="user-radio-group-label">Escoge tu rol</label>
         <mat-radio-group
           aria-labelledby="user-radio-group-label"
           class="user-radio-group"
-          [(ngModel)]="user.type_user" name="userType">
-          <mat-radio-button class="user-radio-button" [value]="UserType.PERSON">Persona</mat-radio-button>
-          <mat-radio-button class="user-radio-button" [value]="UserType.COMPANY">Empresa</mat-radio-button>
+          [(ngModel)]="userType" name="userType">
+          <mat-radio-button class="user-radio-button" [value]="UserType.user">Usuario</mat-radio-button>
+          <mat-radio-button class="user-radio-button" [value]="UserType.company">Empresa</mat-radio-button>
         </mat-radio-group>
-        <ng-container class="buttons">
-          <button mat-raised-button color="primary" (click)="createNewUser()">Crear Cuenta</button>
+        <ng-container *ngIf="userType === UserType.user">
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre Completo</mat-label>
+            <input matInput [(ngModel)]="user.fullName" name="fullName" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="user.email" name="email" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="user.password" name="password" required />
+          </mat-form-field>
         </ng-container>
+        <ng-container *ngIf="userType === UserType.company">
+          <mat-form-field appearance="fill">
+            <mat-label>Nombre de la Empresa</mat-label>
+            <input matInput [(ngModel)]="company.name" name="companyName" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Email</mat-label>
+            <input matInput [(ngModel)]="company.email" name="email" required />
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="company.password" name="password" required />
+          </mat-form-field>
+        </ng-container>
+        <div class="buttons">
+          <button mat-raised-button color="primary" type="submit">Crear Cuenta</button>
+        </div>
       </form>
       <p class="login-link">¿Ya tienes una cuenta? <a routerLink="/mainToolbar/signIn">Inicia sesión aquí</a></p>
     </mat-card-content>

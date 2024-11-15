@@ -30,12 +30,8 @@ import { MatButton } from "@angular/material/button";
 })
 export class ProfileComponent implements OnInit {
   user = {
-    name: 'Fabrisio Belahonia Miranda',
-    username: 'FabrisioMiranda',
-    bio: 'Ni se cómo se usa esta wbda',
-    joinedDate: 'September 2021',
-    followersCount: 2,
-    followingCount: 106,
+    name: sessionStorage.getItem('fullName'),
+    bio: sessionStorage.getItem('email'),
     posts: [
       {
         username: 'JavaMuse🪼',
