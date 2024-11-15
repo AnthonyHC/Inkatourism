@@ -3,7 +3,9 @@
   margin: 20px auto;
   padding: 15px;
 }
-
+.background{
+  background: #f0f8ff;
+}
 .posts {
   display: flex;
   flex-direction: column;
@@ -26,7 +28,14 @@
   width: 100px;
   height: 100px;
 }
-
+.post-media-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+}
+iframe {
+  margin-top: 10px;
+}
 button {
   margin-top: 10px;
 }

@@ -1,22 +1,25 @@
 import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';  // Asegúrate de tener FormsModule
+import { FormsModule } from '@angular/forms';  // Para ngModel
 import { MatButtonModule } from '@angular/material/button';  // Para botones
 import { MatFormFieldModule } from '@angular/material/form-field';  // Para mat-form-field
-import { MatInputModule } from '@angular/material/input';  // Para matInput
+import { MatInputModule } from '@angular/material/input';
+import {NgForOf} from '@angular/common';  // Para matInput
 
 @Component({
   selector: 'app-chat',
   standalone: true,
-  templateUrl: './chat.component.html',
-  styleUrls: ['./chat.component.css'],
+  templateUrl: './chats.component.html',
+  styleUrl: './chats.component.css',
   imports: [
-    FormsModule,
+    FormsModule,  // Asegúrate de que FormsModule está importado
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    NgForOf
   ]
 })
 export class ChatComponent {
+  // Verifica que 'messages' esté correctamente definido como un arreglo
   messages = [
     { user: 'Alice', message: 'Hey, how are you?', time: '10:15 AM' },
     { user: 'Bob', message: 'I\'m good, thanks! You?', time: '10:16 AM' },
@@ -27,12 +30,13 @@ export class ChatComponent {
 
   sendMessage() {
     if (this.newMessage.trim()) {
-      this.messages.push({
+      const newMsg = {
         user: 'You',
         message: this.newMessage,
         time: new Date().toLocaleTimeString(),
-      });
-      this.newMessage = ''; // Limpiar el campo después de enviar el mensaje
+      };
+      this.messages.push(newMsg);  // Asegúrate de que 'messages' es un arreglo
+      this.newMessage = '';  // Limpia el campo después de enviar el mensaje
     }
   }
 }

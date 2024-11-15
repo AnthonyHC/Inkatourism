@@ -1,19 +1,25 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "fullname": "pepe soto",
+      "email": "pepe@gmail.com",
+      "password": "1234",
+      "type_user": 1
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "fullname": "empresa",
+      "email": "empresa@gmail.com",
+      "password": "1234",
+      "type_user": 2
+    },
+    {
+      "id": 3,
+      "fullname": "fabrisdio",
+      "email": "dasdasd",
+      "password": "adsadsa",
+      "type_user": 1
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }

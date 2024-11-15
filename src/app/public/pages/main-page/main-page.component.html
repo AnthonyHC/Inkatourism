@@ -1,50 +1,30 @@
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" opened class="main-sidenav"
-                 [fixedInViewport]="false">
-      <mat-nav-list class="options-list">
-        <div class="logo-container">
-          <img class="logo" src="https://i.imgur.com/1DP47wd.jpeg" alt="LearneLogo" width="100" height="100" routerLink="/mainPage/catalog">
-        </div>
-
-
-        <mat-list-item>
-          <a routerLink="/mainPage/profile"><mat-icon>account_circle</mat-icon>{{ 'mainPage.profile' }}</a>
-        </mat-list-item>
-        <mat-list-item>
-          <mat-icon>logout</mat-icon>{{ 'mainPage.logOut' }}
-        </mat-list-item>
-      </mat-nav-list>
-      <div class="button-language-container">
-        <app-language-switcher></app-language-switcher>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" opened class="main-sidenav"
+               [fixedInViewport]="false">
+    <mat-nav-list class="options-list">
+      <div class="logo-container">
+        <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSRVa8lLOwmvEjX6C_zHd7IzDOUShvDBpjLw&s" alt="LearneLogo" width="100" height="100" routerLink="/mainPage/inicio">
       </div>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-  <mat-sidenav-container class="sidenav-container">
-    <mat-sidenav #sidenav mode="side" opened class="main-sidenav"
-                 [fixedInViewport]="false">
-      <mat-nav-list class="options-list">
-        <div class="logo-container">
-          <img class="logo" src="https://i.imgur.com/1DP47wd.jpeg" alt="LearneLogo" width="100" height="100" routerLink="/mainPage/management">
-        </div>
-        <mat-list-item>
-          <a routerLink="/mainPage/management"><mat-icon>history</mat-icon>{{ 'mainPage.management' }}</a>
-        </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/mainPage/inicio"><mat-icon>home</mat-icon>Home</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/mainPage/notification"><mat-icon>notifications</mat-icon>Notificaciones</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/mainPage/chat"><mat-icon>chat</mat-icon>Mensajes</a>
+      </mat-list-item>
+      <mat-list-item>
+        <a routerLink="/mainPage/profile"><mat-icon>account_circle</mat-icon>Perfil</a>
+      </mat-list-item>
 
+      <mat-list-item>
+        <a (click)="logout()"><mat-icon>exit_to_app</mat-icon>Logout</a>
+      </mat-list-item>
+    </mat-nav-list>
 
-      </mat-nav-list>
-      <div class="button-language-container">
-        <app-language-switcher></app-language-switcher>
-      </div>
-    </mat-sidenav>
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
-
-
-
-
-
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

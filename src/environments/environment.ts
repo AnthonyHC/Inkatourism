@@ -1,3 +1,3 @@
 export const environment = {
-  serverBasePath: 'http://localhost:8080'
+  serverBasePath: 'http://localhost:80'
 };
