@@ -11,6 +11,3 @@ export class UserService extends BaseService<User>{
     this.resourceEndPoint='/users';
   }
 }
-
-export class UsersService {
-}

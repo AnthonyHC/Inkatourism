@@ -1,17 +1,13 @@
-import { UserType } from "./users";
-
 export class User {
-  id: number;
-  fullname: string;
+  id: string;
   email: string;
   password: string;
-  type_user: UserType;
+  fullName: string;
 
-  constructor(user: { id?: number, fullname?: string, email?: string, password?: string, type_user?: UserType }) {
-    this.id = user.id || 0;
-    this.fullname = user.fullname || '';
+  constructor(user: { id?: string, email?: string, password?: string, fullName?: string }) {
+    this.id = user.id || '';
     this.email = user.email || '';
     this.password = user.password || '';
-    this.type_user = user.type_user || UserType.PERSON; // Default to PERSON
+    this.fullName = user.fullName || '';
   }
 }

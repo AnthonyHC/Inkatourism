@@ -25,7 +25,7 @@ export const routes: Routes = [
       {path: 'chat', component: ChatComponent},
 
     ]},
-  { path: '',                    redirectTo: 'mainPage/home', pathMatch: 'full' },
+  { path: '',                    redirectTo: 'mainToolbar/home', pathMatch: 'full' },
   { path: '**',                  component: PageNotFoundComponent }
 
 
