@@ -4,12 +4,8 @@ import {MatIcon} from '@angular/material/icon';
 import {NgForOf} from '@angular/common';
 import {MatList, MatListItem} from '@angular/material/list';
 import {MatCard, MatCardContent} from '@angular/material/card';
-
-interface Notification {
-  message: string;
-  icon: string;
-  type: 'info' | 'success' | 'warning'; // Añadimos un tipo de notificación
-}
+import {NotificationEntity} from '../../../twuiter/model/notification.entity';
+import {NotificationService} from '../../../twuiter/services/notification.service';
 
 @Component({
   selector: 'app-notifications',
@@ -27,65 +23,22 @@ interface Notification {
   styleUrls: ['./notifications.component.css']
 })
 export class NotificationsComponent implements OnInit {
-  notifications: Notification[] = [
-    {
-      message: '@Alan Garcia ha comentado tu hilo',
-      icon: 'notification_important',
-      type: 'warning'
-    },
-    {
-      message: 'El evento del año ha sido anunciado.',
-      icon: 'event',
-      type: 'info'
-    },
-    {
-      message: '@Lebron James te ha empezado a seguir',
-      icon: 'celebration',
-      type: 'success'
-    },
-    {
-      message: 'Tu publicación ha sido retuiteada por @CamilaPerez',
-      icon: 'repeat',
-      type: 'success'
-    },
-    {
-      message: '@Carlos Mendez ha mencionado en tu comentario',
-      icon: 'comment',
-      type: 'info'
-    },
-    {
-      message: '¡Tienes 5 nuevas solicitudes de amistad!',
-      icon: 'group_add',
-      type: 'warning'
-    },
-    {
-      message: 'Tu perfil ha sido verificado.',
-      icon: 'verified',
-      type: 'success'
-    },
-    {
-      message: 'Recuerda que tienes una reunión programada para mañana a las 10:00 AM.',
-      icon: 'event_note',
-      type: 'info'
-    },
-    {
-      message: '@Ana Martinez ha reaccionado a tu tweet',
-      icon: 'thumb_up',
-      type: 'success'
-    },
-    {
-      message: 'Tu tweet ha alcanzado 100 likes, ¡enhorabuena!',
-      icon: 'favorite',
-      type: 'success'
-    },
-    {
-      message: '@Juan Perez ha comenzado a seguirte',
-      icon: 'follow_the_signs',
-      type: 'success'
-    }
-  ];
+  notifications: Array<NotificationEntity> = [];
+  // userId = sessionStorage.getItem('id').toString();
+  userId = "6715e4ae4207fc3afdb56c13";
 
-  constructor() {}
+  constructor(private notificationsApiService: NotificationService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getAllNotifications();
+  }
+
+  private getAllNotifications() {
+    this.notificationsApiService.getAll().subscribe((response: Array<NotificationEntity>) => {
+      this.notifications = response.filter(notification => (notification.recipient_id.toString() === this.userId.toString()));
+      console.log(this.notifications);
+    })
+  }
+
+
 }
