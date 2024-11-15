@@ -12,6 +12,7 @@ import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {Company} from '../../../inkatouris/model/company.entity';
 import {CompaniesService} from '../../../inkatouris/service/companies.service';
 import {map, Observable, of} from 'rxjs';
+import {FormsModule} from '@angular/forms';
 
 
 @Component({
@@ -21,14 +22,19 @@ import {map, Observable, of} from 'rxjs';
   standalone: true,
   imports: [MatCardModule, MatButtonModule,
     MatInputModule, NgForOf, MatIcon, NgIf,
-    NgOptimizedImage, AsyncPipe]
+    NgOptimizedImage, AsyncPipe, FormsModule]
 })
 export class HomeComponent {
   posts: Array<PostEntity> = [];
-  users: Array<User> = [];
   user: User = new User({});
   company: Company = new Company({});
   fullNames: { [key: string]: string } = {};
+
+  newPost: PostEntity = new PostEntity({});
+  // recipientId =  sessionStorage.getItem('id');
+  recipientId = "6715e4ae4207fc3afdb56c13";
+  // type =  sessionStorage.getItem('type');
+  type = "user";
 
 
   getSafeVideoUrl(media: string): SafeResourceUrl {
@@ -134,6 +140,25 @@ export class HomeComponent {
   public getUserFullName(recipientId: string): string {
     console.log(this.fullNames[recipientId]);
     return this.fullNames[recipientId] || 'Cargando...';  // Muestra un texto si el nombre no ha cargado
+  }
+
+  public createPost() {
+    console.log(this.newPost);
+    if(this.newPost.description && this.newPost.url_imagen && this.newPost.url_video && this.newPost.place) {
+      this.newPost.recipientId = this.recipientId || "";
+      this.newPost.type = this.type || "";
+
+      this.postApiService.create(this.newPost).subscribe(response => {
+        console.log(this.newPost);
+        this.newPost.description = "";
+        this.newPost.url_video = "";
+        this.newPost.url_imagen = "";
+        this.newPost.place = "";
+        this.getAllPosts();
+      })
+    } else {
+      alert("All fields are required.");
+    }
   }
 }
 

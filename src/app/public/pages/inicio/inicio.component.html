@@ -20,20 +20,49 @@
 
       <mat-card-content>
         <mat-form-field appearance="fill" class="post-input">
-          <textarea matInput placeholder="What's on your mind?"></textarea>
+<!--          <textarea [ngModel]="newPost.description" matInput placeholder="What's on your mind?"></textarea>-->
+          <input matInput type="text" [(ngModel)]="newPost.description" name="description" required/>
         </mat-form-field>
+
         <div class="post-options">
-          <button mat-icon-button>
-            <mat-icon>photo_camera</mat-icon>
-          </button>
-          <button mat-icon-button>
-            <mat-icon>video_camera</mat-icon>
-          </button>
-          <button mat-icon-button>
-            <mat-icon>location_on</mat-icon>
-          </button>
-          <button mat-raised-button color="primary">Post</button>
+          <!-- Opción de imagen -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>photo_camera</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Image URL" [(ngModel)]="newPost.url_imagen" name="url_imagen" required/>
+            </mat-form-field>
+          </div>
+
+          <!-- Opción de video -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>videocam</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Video URL" [(ngModel)]="newPost.url_video" name="url_video" required/>
+            </mat-form-field>
+          </div>
+
+          <!-- Opción de ubicación -->
+          <div class="option-item">
+            <button mat-icon-button>
+              <mat-icon>location_on</mat-icon>
+            </button>
+            <mat-form-field appearance="fill" class="post-input">
+              <input matInput type="text" placeholder="Location" [(ngModel)]="newPost.place" name="place" required/>
+            </mat-form-field>
+          </div>
         </div>
+
+        <!-- Botón de publicar al final -->
+        <div class="post-button-container">
+          <button mat-raised-button color="primary" (click)="createPost()">Post</button>
+        </div>
+
+
+
       </mat-card-content>
     </mat-card>
   </div>
@@ -60,19 +89,21 @@
         </div>
 
 
-<!--        &lt;!&ndash; Mostrar el medio (imagen o video) si está presente &ndash;&gt;-->
-<!--        <div *ngIf="post.media">-->
-<!--          &lt;!&ndash; Si es un video de YouTube &ndash;&gt;-->
-<!--          <div *ngIf="post.media.includes('youtube.com')">-->
-<!--            <iframe width="100%" height="315" [src]="getSafeVideoUrl(post.media)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-<!--          </div>-->
 
-<!--          &lt;!&ndash; Si es una imagen &ndash;&gt;-->
-<!--          <div *ngIf="!post.media.includes('youtube.com')">-->
-<!--            <img width="100%" height="100%" [src]="post.media" alt="Post media" class="post-media-image" />-->
-<!--          </div>-->
-<!--        </div>-->
+        <div class="comments-section">
+          <h3>Comments</h3>
 
+          <div class="comments-list">
+            <div *ngFor="let comment of post.comments" class="comment-card">
+              <div class="comment-header">
+                <img src="https://i.kym-cdn.com/photos/images/newsfeed/002/925/412/9d1.jpeg" alt="User Avatar" class="comment-avatar">
+                <span class="comment-username">{{ comment.description }}</span>
+            </div>
+          </div>
+        </div>
+
+
+</div>
       </mat-card-content>
     </mat-card>
   </div>

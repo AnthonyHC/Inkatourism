@@ -282,41 +282,47 @@
     }
   ],
   "posts": [
-      {
-        "id": "6715ed924207fc3afdb56c4e",
-        "description": "Navegando por los fiordos de Noruega",
-        "url_video": "https://www.youtube.com/watch?v=3loRIt690NE",
-        "url_imagen": "https://static.wixstatic.com/media/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg/v1/fill/w_1000,h_618,al_c,q_85,enc_auto/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg",
-        "place": "Fiordos de Noruega",
-        "recipientId": "6715e4ae4207fc3afdb56c0b",
-        "type": "user",
-        "comments": [
-          {
-            "description": "¡Los paisajes deben ser impresionantes!",
-            "recipient_id": "6715e4ae4207fc3afdb56c21",
-            "type": "user"
-          }
-        ]
-      },
-      {
-        "id": "6715ed924207fc3afdb56c4f",
-        "description": "Escalando la Torre Eiffel al atardecer",
-        "url_video": "https://www.youtube.com/watch?v=YPMOce2VdKQ",
-        "url_imagen": "https://img.freepik.com/premium-photo/eiffel-tower-night-paris-france_605022-4342.jpg",
-        "place": "París, Francia",
-        "recipientId": "672eb2736c7432122d949ca4",
-        "type": "company",
-        "comments": [
-          {
-            "description": "¡París es mágico a esa hora!",
-            "recipient_id": "6715e4ae4207fc3afdb56c24",
-            "type": "user"
-          }
-        ]
-      }
-
+    {
+      "id": "6715ed924207fc3afdb56c4e",
+      "description": "Navegando por los fiordos de Noruega",
+      "url_video": "https://www.youtube.com/watch?v=3loRIt690NE",
+      "url_imagen": "https://static.wixstatic.com/media/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg/v1/fill/w_1000,h_618,al_c,q_85,enc_auto/611259_e2563b5e1d7c4e5da9f13bf57b03ea05~mv2.jpg",
+      "place": "Fiordos de Noruega",
+      "recipientId": "6715e4ae4207fc3afdb56c0b",
+      "type": "user",
+      "comments": [
+        {
+          "description": "¡Los paisajes deben ser impresionantes!",
+          "recipient_id": "6715e4ae4207fc3afdb56c21",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "6715ed924207fc3afdb56c4f",
+      "description": "Escalando la Torre Eiffel al atardecer",
+      "url_video": "https://www.youtube.com/watch?v=YPMOce2VdKQ",
+      "url_imagen": "https://img.freepik.com/premium-photo/eiffel-tower-night-paris-france_605022-4342.jpg",
+      "place": "París, Francia",
+      "recipientId": "672eb2736c7432122d949ca4",
+      "type": "company",
+      "comments": [
+        {
+          "description": "¡París es mágico a esa hora!",
+          "recipient_id": "6715e4ae4207fc3afdb56c24",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "pkRjtip",
+      "description": "Holaaa",
+      "url_video": "https://www.youtube.com/watch?v=yFMKlkyqsLI",
+      "url_imagen": "https://www.viajesgram.com/uploads/34173cb38f07f89ddbebc2ac9128303f/images/islandia.jpg",
+      "place": "Islandia",
+      "recipientId": "6715e4ae4207fc3afdb56c13",
+      "type": "user",
+      "comments": []
+    }
   ]
 }
-
-
-
