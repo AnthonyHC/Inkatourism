@@ -21,5 +21,244 @@
       "password": "adsadsa",
       "type_user": 1
     }
+  ],
+  "notifications": [
+    {
+      "id": "6715e7dd4207fc3afdb56c18",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0b",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c19",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0b",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1a",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0b",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1b",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0c",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1c",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0c",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1d",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0c",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1e",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0d",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c1f",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0d",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c20",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0d",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c21",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0e",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c22",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0e",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c23",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0e",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c24",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0f",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c25",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0f",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c26",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c0f",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c27",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c10",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c28",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c10",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c29",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c10",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2a",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c11",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2b",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c11",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2c",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c11",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2d",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c12",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2e",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c12",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c2f",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c12",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c30",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c13",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c31",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c13",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c32",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c13",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c33",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c14",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c34",
+      "description": "Tu post ha sido publicado.",
+      "recipient_id": "6715e4ae4207fc3afdb56c14",
+      "type": "user"
+    },
+    {
+      "id": "6715e7dd4207fc3afdb56c35",
+      "description": "Recuerda actualizar tu contraseña en 15 días.",
+      "recipient_id": "6715e4ae4207fc3afdb56c14",
+      "type": "user"
+    },
+    {
+      "id": "672eb46c6c7432122d949cae",
+      "description": "Tu perfil ha sido actualizado.",
+      "recipient_id": "672eb2736c7432122d949ca4",
+      "type": "company"
+    }
+  ],
+  "posts": [
+    {
+      "id": "6715ed924207fc3afdb56c49",
+      "description": "Explorando las ruinas de Machu Picchu durante el amanecer",
+      "url_video": "https://www.example.com/videos/machu_picchu_sunrise.mp4",
+      "url_imagen": "https://www.example.com/images/machu_picchu_sunrise.jpg",
+      "place": "Machu Picchu, Perú",
+      "recipientId": "6715e4ae4207fc3afdb56c0c",
+      "type": "user",
+      "comments": [
+        {
+          "description": "¡Qué vista increíble!",
+          "recipient_id": "6715e4ae4207fc3afdb56c0d",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "6715ed924207fc3afdb56c4a",
+      "description": "Caminata por el Gran Cañón al atardecer",
+      "url_video": "https://www.example.com/videos/grand_canyon_hike.mp4",
+      "url_imagen": "https://www.example.com/images/grand_canyon_sunset.jpg",
+      "place": "Gran Cañón, EE. UU.",
+      "recipientId": "6715e4ae4207fc3afdb56c0f",
+      "type": "user",
+      "comments": [
+        {
+          "description": "Siempre quise ir ahí, ¡qué impresionante!",
+          "recipient_id": "6715e4ae4207fc3afdb56c10",
+          "type": "user"
+        }
+      ]
+    },
+    {
+      "id": "6715ed924207fc3afdb56c4b",
+      "description": "Disfrutando de un paseo en góndola en los canales de Venecia",
+      "url_video": "https://www.example.com/videos/venice_gondola.mp4",
+      "url_imagen": "https://www.example.com/images/venice_gondola.jpg",
+      "place": "Venecia, Italia",
+      "recipientId": "6715e4ae4207fc3afdb56c12",
+      "type": "user",
+      "comments": [
+        {
+          "description": "Siempre he soñado con un paseo en góndola.",
+          "recipient_id": "6715e4ae4207fc3afdb56c13",
+          "type": "user"
+        }
+      ]
+    }
   ]
+
 }
