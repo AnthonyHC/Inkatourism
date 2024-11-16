@@ -3,7 +3,8 @@
   bottom: 0;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0;;
+  background-color: #FAF1EB;
 }
 
 .main-sidenav {
@@ -11,7 +12,7 @@
   align-items: center;
   justify-content: center;
   width: 220px;
-  background:white;
+  background-color: white;
   text-decoration-color: black;
 }
 

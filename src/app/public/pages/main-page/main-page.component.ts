@@ -11,7 +11,7 @@ import {MatIcon} from "@angular/material/icon";
 import {Router, RouterLink, RouterOutlet} from "@angular/router";
 import {LanguageSwitcherComponent} from "../../components/language-switcher/language-switcher.component";
 import {TranslateModule} from "@ngx-translate/core";
-import {NgIf} from "@angular/common";
+import {NgIf, NgOptimizedImage} from "@angular/common";
 
 @Component({
   selector: 'app-main-page',
@@ -33,6 +33,7 @@ import {NgIf} from "@angular/common";
     LanguageSwitcherComponent,
     TranslateModule,
     NgIf,
+    NgOptimizedImage,
   ],
   templateUrl: './main-page.component.html',
   styleUrl: './main-page.component.css'

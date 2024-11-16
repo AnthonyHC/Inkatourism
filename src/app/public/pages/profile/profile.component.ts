@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import {NgForOf, NgIf} from "@angular/common";
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser'; // Importamos DomSanitizer
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import {
   MatCard,
   MatCardActions,
@@ -10,6 +10,8 @@ import {
   MatCardTitle
 } from "@angular/material/card";
 import { MatButton } from "@angular/material/button";
+import {PostEntity} from '../../../twuiter/model/post.entity';
+import {PostService} from '../../../twuiter/services/post.service';
 
 @Component({
   selector: 'app-profile',
@@ -29,59 +31,61 @@ import { MatButton } from "@angular/material/button";
   styleUrl: './profile.component.css'
 })
 export class ProfileComponent implements OnInit {
+  ownerPost: Array<PostEntity> = [];
   user = {
     name: sessionStorage.getItem('fullName'),
     bio: sessionStorage.getItem('email'),
-    posts: [
-      {
-        username: 'JavaMuse🪼',
-        date: 'Dec 10, 2022',
-        message: 'Recomienden sus mejores animes, por favor',
-        media: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/14/db/41/caption.jpg?w=1200&h=-1&s=1'  // Imagen
-      },
-      {
-        username: 'Sergio Kun Aguero',
-        date: 'Dec 9, 2022',
-        message: 'Cuando miran a tu chica 🤣',
-        media: ''  // Sin media
-      },
-      {
-        username: 'Shotta❄️',
-        date: 'Sep 15, 2022',
-        message: 'Oda n’a plus le temps de rigoler et il est déjà entrain de le prouver #ONEPIECE1060',
-        media: 'https://www.youtube.com/watch?v=XtpIBGnA-a4'  // Video de YouTube
-      },
-      {
-        username: 'Ibai',
-        date: 'Mar 29, 2022',
-        message: 'Lo necesito 🥺',
-        media: ''  // Sin media
-      },
-      {
-        username: 'MikuLover',
-        date: 'Jan 20, 2023',
-        message: '¿Alguien más ve anime en la madrugada?',
-        media: 'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/29/14/db/41/caption.jpg?w=1200&h=-1&s=1'  // Imagen
-      },
-      {
-        username: 'TechGuru',
-        date: 'Feb 5, 2023',
-        message: 'Nuevo tutorial de desarrollo web',
-        media: 'https://www.youtube.com/watch?v=XtpIBGnA-a4'  // Video de YouTube
-      }
-    ]
   };
 
-  constructor(private sanitizer: DomSanitizer) { }
+  constructor(private sanitizer: DomSanitizer, private postApiService: PostService) { }
 
-  ngOnInit(): void {}
-
-  getSafeVideoUrl(url: string): SafeResourceUrl {
-    const videoId = url.split('v=')[1].split('&')[0];  // Extrae el ID del video
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${videoId}`);
+  private getOwnPost() {
+    this.postApiService.getAll().subscribe((response: Array<PostEntity>) => {
+      this.ownerPost = response.filter(p => p.recipientId === sessionStorage.getItem('id'));
+      console.log(this.ownerPost);
+    })
   }
 
-  navigateToTweets() {
-    // Navegar a la página de tweets del usuario (implementa la lógica de enrutamiento si es necesario)
+  ngOnInit(): void {
+    this.getOwnPost();
   }
+
+  getSafeVideoUrl(media: string): SafeResourceUrl {
+    const embedUrl = this.getEmbedUrl(media);
+    if (!embedUrl) {
+      console.warn('No valid embed URL generated for media:', media);
+      return '';
+    }
+    return this.sanitizer.bypassSecurityTrustResourceUrl(embedUrl);
+  }
+
+  getEmbedUrl(url: string): string {
+    if (!url) {
+      console.error('Video URL is undefined or empty:', url);
+      return '';
+    }
+
+    try {
+      let videoId: string | undefined;
+
+      if (url.includes('youtu.be/')) {
+        videoId = url.split('youtu.be/')[1].split('?')[0];
+      }
+      else if (url.includes('v=')) {
+        videoId = url.split('v=')[1].split('&')[0];
+      }
+
+      if (!videoId) {
+        console.error('No video ID found in URL:', url);
+        return '';
+      }
+
+      return `https://www.youtube.com/embed/${videoId}`;
+    } catch (error) {
+      console.error('Error parsing video URL:', url, error);
+      return '';
+    }
+  }
+
+  protected readonly sessionStorage = sessionStorage;
 }
